@@ -1,0 +1,133 @@
+:root {
+  --primary: #0a3d62;
+  --accent: #1e90ff;
+  --text-light: #ffffff;
+  --overlay: rgba(10, 61, 98, 0.85);
+}
+
+.promo-banner {
+  margin: 40px 0;
+  padding: 10px 24px;
+  background: linear-gradient(
+      135deg,
+      var(--overlay),
+      rgba(30, 144, 255, 0.85)
+    ),
+    url("../images/banner-road.jpeg") center/cover no-repeat; 
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: var(--text-light);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle animated glow */
+.promo-banner::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.08),
+    transparent 60%
+  );
+  animation: glow 8s linear infinite;
+}
+
+/* Container */
+.promo-banner__container {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  z-index: 1;
+}
+
+/* Icon */
+.promo-banner__icon {
+  font-size: 54px;
+  margin-bottom: 24px;
+  color: #fff;
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Title */
+.promo-banner h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.promo-banner h2 span {
+  color: #cce7ff;
+}
+
+/* Text */
+.promo-banner p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  opacity: 0.95;
+}
+
+/* Button */
+.promo-banner__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 34px;
+  background: white;
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: all 0.35s ease;
+}
+
+.promo-banner__btn:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-4px);
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .promo-banner {
+    border-radius: 0;
+    margin: 80px 0;
+  }
+
+  .promo-banner h2 {
+    font-size: 32px;
+  }
+
+  .promo-banner p {
+    font-size: 16px;
+  }
+}

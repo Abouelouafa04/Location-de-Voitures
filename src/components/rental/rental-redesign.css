@@ -1,0 +1,563 @@
+.rental-hero {
+  height: 45vh;
+  background: linear-gradient(#00000099, #00000066),
+    url("../../../public/images/banner-road.jpeg") center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rental-hero-content {
+  color: white;
+  text-align: center;
+  max-width: 700px;
+}
+
+.rental-hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+
+}
+
+.filter-bar {
+  display: flex;
+  padding: 28px 24px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.filter-bar__container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  align-items: flex-end;
+}
+
+/* Filter Item */
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0a3d62;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Select Styling */
+.filter-select {
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  background: white;
+  color: #1f2937;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%230a3d62' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.filter-select:hover {
+  border-color: #0a3d62;
+  box-shadow: 0 4px 12px rgba(10, 61, 98, 0.1);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #1e90ff;
+  box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.1);
+}
+
+/* Price Filter */
+.filter-price {
+  gap: 12px;
+}
+
+.price-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-range {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(to right, #e5e7eb, #d1d5db);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.filter-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0a3d62, #0d5fa8);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(10, 61, 98, 0.3);
+  transition: all 0.2s ease;
+}
+
+.filter-range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(10, 61, 98, 0.4);
+}
+
+.filter-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0a3d62, #0d5fa8);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(10, 61, 98, 0.3);
+  transition: all 0.2s ease;
+}
+
+.filter-range::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(10, 61, 98, 0.4);
+}
+
+.price-value {
+  min-width: 70px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #0a3d62, #0d5fa8);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(10, 61, 98, 0.2);
+}
+
+/* Reset Button */
+.filter-reset {
+  padding: 12px 20px;
+  background: white;
+  color: #0a3d62;
+  border: 2px solid #0a3d62;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  align-self: flex-end;
+}
+
+.filter-reset:hover {
+  background: #0a3d62;
+  color: white;
+  box-shadow: 0 4px 12px rgba(10, 61, 98, 0.3);
+  transform: translateY(-2px);
+}
+
+.filter-reset:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .filter-bar__container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-bar {
+    padding: 20px 16px;
+  }
+
+  .filter-bar__container {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .filter-reset {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-bar {
+    padding: 16px 12px;
+  }
+
+  .filter-select,
+  .filter-reset {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .price-wrapper {
+    gap: 8px;
+  }
+
+  .price-value {
+    min-width: 60px;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+.car-grid {
+  padding: 60px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  min-height: 60vh;
+}
+
+.car-grid.empty {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.empty {
+  font-size: 20px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Car Card Professional Styling */
+.car-card-v2 {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #e5e7eb;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.car-card-v2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0a3d62, #1e90ff);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.car-card-v2:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 24px 48px rgba(10, 61, 98, 0.15);
+  border-color: #1e90ff;
+}
+
+.car-card-v2:hover::before {
+  opacity: 1;
+}
+
+/* Card Image */
+.car-card-v2 img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.car-card-v2:hover img {
+  transform: scale(1.08);
+}
+
+/* Card Body */
+.card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
+.card-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a3d62;
+  margin: 0;
+  line-height: 1.3;
+  flex: 1;
+}
+
+.card-header span {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e90ff;
+  white-space: nowrap;
+}
+
+.card-meta {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 12px 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.card-meta::before {
+  content: '';
+  width: 3px;
+  height: 3px;
+  background: #d1d5db;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+
+.card-btn {
+  margin-top: 16px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #0a3d62, #0d5fa8);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(10, 61, 98, 0.2);
+}
+
+.card-btn:hover {
+  background: linear-gradient(135deg, #1e90ff, #0a3d62);
+  box-shadow: 0 8px 20px rgba(10, 61, 98, 0.3);
+  transform: translateY(-2px);
+}
+
+.card-btn:active {
+  transform: translateY(0);
+}
+
+/* Modal Styles */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-card {
+  background: white;
+  border-radius: 20px;
+  max-width: 800px;
+  width: 90%;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.modal-content {
+  padding: 32px;
+}
+
+.modal-content h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0a3d62;
+  margin-bottom: 20px;
+}
+
+.modal-content ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.modal-content li {
+  padding: 8px 0;
+  color: #4b5563;
+  font-size: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.modal-content li:last-child {
+  border-bottom: none;
+}
+
+.modal-content strong {
+  display: block;
+  font-size: 20px;
+  color: #1e90ff;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+/* Reserve Button */
+.reserve-btn {
+  background: linear-gradient(135deg, #0a3d62, #0d5fa8);
+  color: white;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(10, 61, 98, 0.2);
+}
+
+.reserve-btn:hover {
+  background: linear-gradient(135deg, #1e90ff, #0a3d62);
+  box-shadow: 0 8px 20px rgba(10, 61, 98, 0.3);
+  transform: translateY(-2px);
+}
+
+.reserve-btn:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .car-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 28px;
+    padding: 48px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .car-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+    padding: 40px 16px;
+  }
+
+  .card-body {
+    padding: 18px;
+  }
+
+  .card-header h3 {
+    font-size: 16px;
+  }
+
+  .modal-card {
+    width: 95%;
+  }
+
+  .modal-content {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .car-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 32px 12px;
+  }
+
+  .car-card-v2 img {
+    height: 200px;
+  }
+
+  .card-body {
+    padding: 16px;
+  }
+
+  .card-header {
+    flex-direction: column;
+  }
+
+  .card-header h3,
+  .card-header span {
+    font-size: 16px;
+  }
+
+  .modal-card {
+    width: 98%;
+  }
+
+  .modal-card img {
+    height: 240px;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-content h2 {
+    font-size: 20px;
+  }
+}
